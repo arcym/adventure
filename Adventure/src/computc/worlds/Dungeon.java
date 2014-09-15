@@ -1,7 +1,10 @@
 package computc.worlds;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Random;
 
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -15,6 +18,21 @@ public abstract class Dungeon
 	protected HashMap<String, Room> rooms = new HashMap<String, Room>();
 	protected LinkedList<Entity> entities = new LinkedList<Entity>();
 	protected Room firstRoom;
+	
+	protected HashMap<String, RoomLayout> roomlayouts = new HashMap<String, RoomLayout>();
+	
+	public Dungeon() throws SlickException
+	{
+		File[] files = new File("./res/rooms/").listFiles();
+		
+		for(File file : files)
+		{
+			String name = file.getName().substring(0, file.getName().indexOf('.'));
+			RoomLayout layout = new RoomLayout(file.getPath());
+			
+			roomlayouts.put(name, layout);
+		}
+	}
 
 	public void render(Graphics graphics, Camera camera)
 	{

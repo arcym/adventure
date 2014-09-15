@@ -175,7 +175,7 @@ public class Room
 	 * 
 	 * @units_of		pixels
 	 */
-	public int getWidth()
+	public static int getWidth()
 	{
 		return Room.WIDTH;
 	}
@@ -186,7 +186,7 @@ public class Room
 	 * 
 	 * @units_of		pixels
 	 */
-	public int getHeight()
+	public static int getHeight()
 	{
 		return Room.HEIGHT;
 	}
@@ -197,7 +197,7 @@ public class Room
 	 * 
 	 * @units_of		tiles
 	 */
-	public int getTileyWidth()
+	public static int getTileyWidth()
 	{
 		return Room.TILEY_WIDTH;
 	}
@@ -208,7 +208,7 @@ public class Room
 	 * 
 	 * @units_of		tiles
 	 */
-	public int getTileyHeight()
+	public static int getTileyHeight()
 	{
 		return Room.TILEY_HEIGHT;
 	}
